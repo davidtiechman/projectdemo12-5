@@ -8,26 +8,34 @@ namespace ConsoleApp8
 {
     internal class Program
     {
-        static string  addNumper()
+        static string PrintArray(string[] array)
         {
-            Console.WriteLine("enter sum numbers");
-            string[] numbers = Console.ReadLine().Split(' ');
-            foreach (string number in numbers)
+            //Console.WriteLine("enter sum numbers");
+            //string[] numbers = Console.ReadLine().Split(' ');
+            foreach (string number in array)
             {
-                Console.Write(number);
+                Console.Write($"{number} ");
             }
             return "f";
+        }
+        static string PrintRevers(string[] array)
+        {
+            for (int i = 0; i < (array.Length); i++)
 
-
-                //List<int> reverse = new List<int>();
-                //   reverse.Add(Convert.ToInt32(array[array.Length - 1]));
-                //int lastnum = reverse.Count - 1;
-                //return lastnum;
+            {
+                Console.Write(array[array.Length -(1+i)]);
             }
+            return "f";
+        }
+
+
+
+        
 
         static void Main(string[] args)
-            {
-            addNumper();
-            }
-        }
+        {
+            PrintArray(new string[] { "1", "4" });
+            PrintRevers(new string[] { "1", "4" });
+                                                    }
     }
+}    
