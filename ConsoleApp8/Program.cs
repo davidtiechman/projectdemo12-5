@@ -8,16 +8,11 @@ namespace ConsoleApp8
 {
     internal class Program
     {
-        static int[] AddAnumber()
+        static int[] Addthenumbers()
         {
             Console.WriteLine("pleas enter are numbers");
-            string type = Console.ReadLine();
-            string [] tepes = type.Split(' ') ;
-            int[] array = new int [tepes.Length];
-            for (int i=0;i< tepes.Length;i++)
-            {
-                array[i] = int.Parse(tepes[i]);
-            }            
+            string [] tepes = Console.ReadLine().Split(' ');
+            int []array = Array.ConvertAll(tepes, int.Parse);
             return array;
         }
         static void PrintArray(int[] array)
@@ -25,7 +20,9 @@ namespace ConsoleApp8
             foreach (int number in array)
             {
                 Console.Write($"{number} ");
+                
             }
+            Console.WriteLine("\n");
             
         }
         static void PrintRevers(int[] array)
@@ -35,23 +32,28 @@ namespace ConsoleApp8
             {
                 Console.Write($"{array[array.Length -(1+i)]} ");
             }
+            Console.WriteLine("\n");
             
         }
-        static int FindMin(int[] array){
+        static void FindMin(int[] array){ 
             int min = 0;
             for (int i = 0; i < array.Length; i++)
             {
                 if (array[i] < array[min])
                     min = i;
             }
-            return array[min];
+            Console.WriteLine(array[min]);
         }
-        static int [] sort (int[] array)
+        static void sort (int[] array)
         { 
             Array.Sort(array);
-                return array;
+            foreach (int number in array)
+            {
+                Console.Write($"{number} ");
+            }
+            Console.WriteLine("\n");
         }
-        static int FindMax(int[] array)
+        static void FindMax(int[] array)
         {
             int max = 0;
             for (int i = 0; i < array.Length; i++)
@@ -59,65 +61,75 @@ namespace ConsoleApp8
                 if (array[i] > array[max])
                     max = i;
             }
-            return array[max];
+            Console.WriteLine(array[max]);
         }
-        static int Ave(int[] array)
+        static void Ave(int[] array)
         {
             int type = 0;
             for (int i = 0; i < array.Length;i++)
             {
                 type += array[i];
             }
-            return type/(array.Length);
+            Console.WriteLine(type/(array.Length));
         }
-        static int Lenarrya(int[] array)
+        static void Lenarrya(int[] array)
         {
             int len = array.Length;
 
-            return len;
+            Console.WriteLine(len);
         }
-        static int Sumarrya(in int[] array)
+        static void Sumarrya(in int[] array)
         {
             int sum = 0;
             for (int i = 0; i < array.Length;i++){
                 sum += array[i];
                 }
-            return sum;
+            Console.WriteLine(sum);
         }
         static void menu(int[]a)
         {
-            string menu = null;
+            string choice = null;
             string [] arraynemus = {"a","b","c","d","e","f","g","h","i","j"};
-            while (!arraynemus.Contains(menu)) { 
+            while (!arraynemus.Contains(choice)) { 
             Console.WriteLine("pleas enter how menu");
-            menu = Console.ReadLine();
-                switch (menu)
+            choice = Console.ReadLine();
+                switch (choice)
                 {
                     case "a":
+                       a = Addthenumbers();
+                       menu(a);
                         break;
                     case "b":
                         PrintArray(a);
+                        menu(a);
                         break;
                     case "c":
                         PrintRevers(a);
+                        menu(a);
                         break;
                     case "d":
                         sort(a);
+                        menu(a);
                         break;
                     case "e":
                         FindMin(a);
+                        menu(a);
                         break;
                     case "f":
                         FindMax(a);
+                        menu(a);
                         break;
                     case "g":
                         Ave(a);
+                        menu(a);
                         break;
                     case "h":
                         Lenarrya(a);
+                        menu(a);
                         break;
                     case "i":
                         Sumarrya(a);
+                        menu(a);
                         break;
                     case "j":
                         break;
