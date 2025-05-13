@@ -37,15 +37,32 @@ namespace ConsoleApp8
             }
             return "f";
         }
+        static int FindMin(int[] array){
+            int min = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] < array[min])
+                    min = i;
+            }
+            return array[min];
+        }
+        static int FindMax(int[] array)
+        {
+            int max = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] > array[max])
+                    max = i;
+            }
+            return array[max];
+        }
 
-
-
-        
         
         static void Main(string[] args)
         {
-            PrintArray(AddAnumber());
-            PrintRevers(AddAnumber());
+            //PrintArray(AddAnumber());
+            //PrintRevers(AddAnumber());
+            //Console.WriteLine(FindMin(AddAnumber()));
            
                                                     }
     }
