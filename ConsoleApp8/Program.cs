@@ -20,22 +20,22 @@ namespace ConsoleApp8
             }            
             return array;
         }
-        static string PrintArray(int[] array)
+        static void PrintArray(int[] array)
         {
             foreach (int number in array)
             {
                 Console.Write($"{number} ");
             }
-            return "f";
+            
         }
-        static string PrintRevers(int[] array)
+        static void PrintRevers(int[] array)
         {
             for (int i = 0; i < (array.Length); i++)
 
             {
-                Console.Write(array[array.Length -(1+i)]);
+                Console.Write($"{array[array.Length -(1+i)]} ");
             }
-            return "f";
+            
         }
         static int FindMin(int[] array){
             int min = 0;
@@ -45,6 +45,11 @@ namespace ConsoleApp8
                     min = i;
             }
             return array[min];
+        }
+        static int [] sort (int[] array)
+        { 
+            Array.Sort(array);
+                return array;
         }
         static int FindMax(int[] array)
         {
@@ -79,16 +84,61 @@ namespace ConsoleApp8
                 }
             return sum;
         }
+        static void menu(int[]a)
+        {
+            string menu = null;
+            string [] arraynemus = {"a","b","c","d","e","f","g","h","i","j"};
+            while (!arraynemus.Contains(menu)) { 
+            Console.WriteLine("pleas enter how menu");
+            menu = Console.ReadLine();
+                switch (menu)
+                {
+                    case "a":
+                        break;
+                    case "b":
+                        PrintArray(a);
+                        break;
+                    case "c":
+                        PrintRevers(a);
+                        break;
+                    case "d":
+                        sort(a);
+                        break;
+                    case "e":
+                        FindMin(a);
+                        break;
+                    case "f":
+                        FindMax(a);
+                        break;
+                    case "g":
+                        Ave(a);
+                        break;
+                    case "h":
+                        Lenarrya(a);
+                        break;
+                    case "i":
+                        Sumarrya(a);
+                        break;
+                    case "j":
+                        break;
+                }
+                  
+            }
+        }
+
         
         
         static void Main(string[] args)
         {
+            int[] arrayq = {5,6,7,8,9,10,1};
             //PrintArray(AddAnumber());
             //PrintRevers(AddAnumber());
             //Console.WriteLine(FindMin(AddAnumber()));
             //Console.WriteLine(Ave(AddAnumber()));
             //Console.WriteLine(Lenarrya(AddAnumber()));
-            Console.WriteLine(Sumarrya(AddAnumber()));
-                                                    }
+            //Console.WriteLine(Sumarrya(AddAnumber()));
+            //Console.WriteLine(sort(AddAnumber()));
+            menu(arrayq);
+        }
     }
-}    
+}
