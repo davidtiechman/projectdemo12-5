@@ -71,6 +71,14 @@ namespace ConsoleApp8
 
             return len;
         }
+        static int Sumarrya(in int[] array)
+        {
+            int sum = 0;
+            for (int i = 0; i < array.Length;i++){
+                sum += array[i];
+                }
+            return sum;
+        }
         
         
         static void Main(string[] args)
@@ -79,7 +87,8 @@ namespace ConsoleApp8
             //PrintRevers(AddAnumber());
             //Console.WriteLine(FindMin(AddAnumber()));
             //Console.WriteLine(Ave(AddAnumber()));
-            Console.WriteLine(Lenarrya(AddAnumber()));
+            //Console.WriteLine(Lenarrya(AddAnumber()));
+            Console.WriteLine(Sumarrya(AddAnumber()));
                                                     }
     }
 }    
