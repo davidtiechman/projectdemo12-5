@@ -65,14 +65,21 @@ namespace ConsoleApp8
             }
             return type/(array.Length);
         }
+        static int Lenarrya(int[] array)
+        {
+            int len = array.Length;
 
+            return len;
+        }
+        
         
         static void Main(string[] args)
         {
             //PrintArray(AddAnumber());
             //PrintRevers(AddAnumber());
             //Console.WriteLine(FindMin(AddAnumber()));
-            Console.WriteLine(Ave(AddAnumber()));
+            //Console.WriteLine(Ave(AddAnumber()));
+            Console.WriteLine(Lenarrya(AddAnumber()));
                                                     }
     }
 }    
