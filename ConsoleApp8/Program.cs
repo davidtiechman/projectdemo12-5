@@ -56,6 +56,15 @@ namespace ConsoleApp8
             }
             return array[max];
         }
+        static int Ave(int[] array)
+        {
+            int type = 0;
+            for (int i = 0; i < array.Length;i++)
+            {
+                type += array[i];
+            }
+            return type/(array.Length);
+        }
 
         
         static void Main(string[] args)
@@ -63,7 +72,7 @@ namespace ConsoleApp8
             //PrintArray(AddAnumber());
             //PrintRevers(AddAnumber());
             //Console.WriteLine(FindMin(AddAnumber()));
-           
+            Console.WriteLine(Ave(AddAnumber()));
                                                     }
     }
 }    
