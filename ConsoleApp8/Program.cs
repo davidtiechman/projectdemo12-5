@@ -8,17 +8,27 @@ namespace ConsoleApp8
 {
     internal class Program
     {
-        static string PrintArray(string[] array)
+        static int[] AddAnumber()
         {
-            //Console.WriteLine("enter sum numbers");
-            //string[] numbers = Console.ReadLine().Split(' ');
-            foreach (string number in array)
+            Console.WriteLine("pleas enter are numbers");
+            string type = Console.ReadLine();
+            string [] tepes = type.Split(' ') ;
+            int[] array = new int [tepes.Length];
+            for (int i=0;i< tepes.Length;i++)
+            {
+                array[i] = int.Parse(tepes[i]);
+            }            
+            return array;
+        }
+        static string PrintArray(int[] array)
+        {
+            foreach (int number in array)
             {
                 Console.Write($"{number} ");
             }
             return "f";
         }
-        static string PrintRevers(string[] array)
+        static string PrintRevers(int[] array)
         {
             for (int i = 0; i < (array.Length); i++)
 
@@ -31,11 +41,12 @@ namespace ConsoleApp8
 
 
         
-
+        
         static void Main(string[] args)
         {
-            PrintArray(new string[] { "1", "4" });
-            PrintRevers(new string[] { "1", "4" });
+            PrintArray(AddAnumber());
+            PrintRevers(AddAnumber());
+           
                                                     }
     }
 }    
