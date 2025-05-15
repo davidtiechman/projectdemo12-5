@@ -8,12 +8,47 @@ namespace ConsoleApp8
 {
     internal class Program
     {
+        static bool Chackingaffirmativ(int[] array)
+        {
+            int count = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] < 0)
+                    count++;
+            }
+            if (count >= 3)
+            {
+                return true;
+            }
+            else { return false; }
+        }
+        static bool chackingnumber(int[] array)
+        {
+            int caount = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i].GetType() == typeof(int))
+                {
+                    caount ++;
+                }
+              }
+                if (caount == array.Length)
+                {
+                    return true; 
+                }
+                else return false;
+
+            
+        }
+
         static int[] Addthenumbers()
         {
             Console.WriteLine("pleas enter are numbers");
-            string [] tepes = Console.ReadLine().Split(' ');
-            int []array = Array.ConvertAll(tepes, int.Parse);
-            return array;
+            string type = Console.ReadLine();
+            string[] tepes = type.Split(' ');
+            int[] a = Array.ConvertAll(tepes,int.Parse);
+
+            return a;
         }
         static void PrintArray(int[] array)
         {
@@ -89,9 +124,9 @@ namespace ConsoleApp8
         static void menu(int[]a)
         {
             string choice = null;
-            string [] arraynemus = {"a","b","c","d","e","f","g","h","i","j"};
-            while (!arraynemus.Contains(choice)) { 
-            Console.WriteLine("pleas enter how menu");
+            string [] arraymnemus = {"a","b","c","d","e","f","g","h","i","j"};
+            while (!arraymnemus.Contains(choice)) { 
+            Console.WriteLine("pleas enter whish menu");
             choice = Console.ReadLine();
                 switch (choice)
                 {
@@ -137,7 +172,7 @@ namespace ConsoleApp8
                   
             }
         }
-
+        
         
         
         static void Main(string[] args)
